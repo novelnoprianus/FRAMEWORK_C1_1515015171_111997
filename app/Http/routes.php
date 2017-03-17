@@ -1,5 +1,5 @@
 <?php
-
+use App\pengguna;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,6 +13,11 @@
 
 Route::get('pengguna','penggunaController@awal');
 Route::get('pengguna/tambah','penggunaController@tambah');
+$pengguna = new pengguna();
+	$pengguna->username = 'Novel';
+	$pengguna->password = 'novel';
+	$pengguna->save();
+	return "data dengan username {$pengguna->username} telah disimpan";
 
 Route::get('dosen','dosenController@awal');
 Route::get('dosen/tambah','dosenController@tambah');
