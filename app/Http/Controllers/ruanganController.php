@@ -11,18 +11,41 @@ class ruanganController extends Controller
 {
      public function awal()
     {
-    	return "Hello dari jadwalController<br>'tambah' ngga bisa nampil :'( ";
-    }
-     public function tambah()
-{
-	return $this->simpan();
-}
-public function simpan()
-{
-	$ruangan = new ruangan();
-	$ruangan->username = 'Novel';
-	$ruangan->password = 'novel';
-	$ruangan->save();
-	return "data dengan username {$ruangan->username} telah disimpan";
-}
+		return view('ruangan.awal', ['data'=>ruangan::all()]);
+	}
+	public function tambah()
+	{
+		return view('ruangan.tambah');
+	}
+	public function simpan(Request $input)
+	{
+		$ruangan = new ruangan;
+		$ruangan->username = $input->username;
+		$ruangan->password = $input->password;
+		$informasi = $ruangan->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
+		return redirect('ruangan')->with(['informasi'=>$informasi]);
+	}
+	public function edit($id)
+	{
+		$ruangan = ruangan::find($id);
+		return view('ruangan.edit')->with(array('ruangan'=>$ruangan));
+	}
+	public function lihat($id)
+	{
+		$ruangan = ruangan::find($id);
+		return view('ruangan.lihat')->with(array('ruangan'=>$ruangan));
+	}
+	{
+		$ruangan = new ruangan;
+		$ruangan->username = $input->username;
+		$ruangan->password = $input->password;
+		$informasi = $ruangan->save() ? 'Berhasil update data' : 'Gagal update data';
+		return redirect('ruangan')->with(['informasi'=>$informasi]);
+	}
+	public function hapus($id)
+	{
+		$ruangan = ruangan::find($id);
+		$informasi = $ruangan->delete() ? 'Berhasil hapus data' ; 'Gagal hapus data';
+		return redirect('ruangan')->with(['informasi'=>$informasi]);
+	}
 }
