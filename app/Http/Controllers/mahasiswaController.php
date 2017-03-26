@@ -11,7 +11,7 @@ class mahasiswaController extends Controller
 {
     public function awal()
     {
-    	return "Hello dari mahasiswaController<br>'tambah' ngga bisa nampil :'(";
+    	return "Hello dari mahasiswaController";
     }
     public function tambah()
 {

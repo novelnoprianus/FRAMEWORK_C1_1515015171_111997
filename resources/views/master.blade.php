@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<title>@yield('page_title','Halaman Awal') | Laboratorium Pemrograman FW</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font-awesome.min.css')}}">
@@ -14,7 +14,7 @@
 			padding: 40px 15px;
 			text-align: center;
 		}
-		.from-horizontal {
+		.form-horizontal {
 			padding: 15px 10px;
 		}
 		footer{
@@ -27,8 +27,8 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toogle navigation</span>
+				<button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -85,7 +85,7 @@
 		@if (Session::has('informasi'))
 		<div class="alert alert-info">
 			<strong>Informasi</strong>
-			{{Session::get(informasi)}}
+			{{Session::get('informasi')}}
 		</div>
 		@endif
 		@yield('container')
@@ -93,16 +93,14 @@
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 	<footer class="container">
 		<!-- please dont delete this-->
-		created by <a href="http://twitter.com/triasbrata"><span><i class="fa fa-twitter" style="color: #1da1f2"></i> @triasbrata</span></a>
+		created by <a href="http://facebook.com/novelldayken.lawen"><span><i class="fa fa-facebook" style="color: #1da1f2"></i> @novelldayken.lawen</span></a>
 		<!--/ please dont delete this -->
 	</footer>		
 	</nav>
-	<script type="text/javascript" src="{{ asset('componen/jquery/dist/jquery.min.js')}}"></script>
-	<script type="text/javascript" src="{{ asset('componen/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('component/jquery/dist/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('component/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript">
 		$(function () {
-			$('[data-toggle="tooltip"]').tooltip() 
-		});
+			$('[data-toggle="tooltip"]').tooltip() });
 	</script>
 </body>
-</html>

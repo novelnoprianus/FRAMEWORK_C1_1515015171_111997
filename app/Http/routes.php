@@ -1,5 +1,7 @@
 <?php
-//use App\pengguna;
+use App\pengguna;
+use App\matakuliah;
+use App\ruangan;
 /*
 |--------------------------------------------------------------------------
 | Application Routes

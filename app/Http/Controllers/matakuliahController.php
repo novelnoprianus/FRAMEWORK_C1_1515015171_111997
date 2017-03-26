@@ -1,15 +1,15 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\matakuliah;
+
 class matakuliahController extends Controller
 {
-    public function awal()
-   {
+	public function awal()
+	{
 		return view('matakuliah.awal', ['data'=>matakuliah::all()]);
 	}
 	public function tambah()
@@ -34,8 +34,9 @@ class matakuliahController extends Controller
 		$matakuliah = matakuliah::find($id);
 		return view('matakuliah.lihat')->with(array('matakuliah'=>$matakuliah));
 	}
+	public function update($id, Request $input)
 	{
-		$matakuliah = new matakuliah;
+		$matakuliah = matakuliah::find($id);
 		$matakuliah->username = $input->username;
 		$matakuliah->password = $input->password;
 		$informasi = $matakuliah->save() ? 'Berhasil update data' : 'Gagal update data';
@@ -44,7 +45,7 @@ class matakuliahController extends Controller
 	public function hapus($id)
 	{
 		$matakuliah = matakuliah::find($id);
-		$informasi = $matakuliah->delete() ? 'Berhasil hapus data' ; 'Gagal hapus data';
+		$informasi = $matakuliah->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
 		return redirect('matakuliah')->with(['informasi'=>$informasi]);
 	}
 }

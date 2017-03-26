@@ -11,7 +11,7 @@ class jadwal_matakuliahController extends Controller
 {
     public function awal()
     {
-    	return "Hello dari jadwal_matakuliahController<br>'tambah' ngga bisa nampil :'( ";
+    	return "Hello dari jadwal_matakuliahController";
     }
     public function tambah()
 {

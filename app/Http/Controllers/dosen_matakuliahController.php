@@ -10,7 +10,7 @@ class dosen_matakuliahController extends Controller
 {
      public function awal()
     {
-    	return "Hello dari dosen_matakuliahController<br'tambah' ngga bisa nampil :'( ";
+    	return "Hello dari dosen_matakuliahController";
     }
      public function tambah()
 {

@@ -11,7 +11,7 @@ class dosenController extends Controller
 {
     public function awal()
     {
-    	return "Hello dari dosenController<br>'tambah' ngga bisa nampil :'( ";
+    	return "Hello dari dosenController";
     }
     public function tambah()
 {
