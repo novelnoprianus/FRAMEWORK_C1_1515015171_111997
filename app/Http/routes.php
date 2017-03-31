@@ -40,19 +40,19 @@ Route::get('jadwal_matakuliah/tambah','jadwal_matakuliahController@tambah');
 Route::get('ruangan','ruanganController@awal');
 Route::get('ruangan/tambah','ruanganController@tambah');
 
-Route::get('pengguna/{pengguna}','penggunaController@lihat');
+Route::get('pengguna/lihat/{pengguna}','penggunaController@lihat');
 Route::post('pengguna/simpan','penggunaController@simpan');
 Route::get('pengguna/edit/{pengguna}','penggunaController@edit');
 Route::post('pengguna/edit/{pengguna}','penggunaController@update');
 Route::get('pengguna/hapus/{pengguna}','penggunaController@hapus');
 
-Route::get('matakuliah/{matakuliah}','matakuliahController@lihat');
+Route::get('matakuliah/lihat/{matakuliah}','matakuliahController@lihat');
 Route::post('matakuliah/simpan','matakuliahController@simpan');
 Route::get('matakuliah/edit/{matakuliah}','matakuliahController@edit');
 Route::post('matakuliah/edit/{matakuliah}','matakuliahController@update');
 Route::get('matakuliah/hapus/{matakuliah}','matakuliahController@hapus');
 
-Route::get('ruangan/{ruangan}','ruanganController@lihat');
+Route::get('ruangan/lihat/{ruangan}','ruanganController@lihat');
 Route::post('ruangan/simpan','ruanganController@simpan');
 Route::get('ruangan/edit/{ruangan}','ruanganController@edit');
 Route::post('ruangan/edit/{ruangan}','ruanganController@update');
