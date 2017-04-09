@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -8,30 +8,32 @@ use App\pengguna;
 
 class penggunaController extends Controller
 {
-	public function awal()
+    public function awal()
 	{
-		return view('pengguna.awal', ['data'=>pengguna::all()]);
+		return view('pengguna.awal',['data'=>pengguna::all()]);
 	}
 	public function tambah()
 	{
 		return view('pengguna.tambah');
 	}
-	public function simpan(Requests $input)
+	public function simpan(Request $input)
 	{
-		$pengguna = new pengguna;
+		$pengguna = new pengguna();
 		$pengguna->username = $input->username;
 		$pengguna->password = $input->password;
-		$informasi = $pengguna->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
+		$pengguna->save();
+		$informasi=$pengguna->save() ? 'Berhasil simpan data' : 'Gagal Simpan data';
 		return redirect('pengguna')->with(['informasi'=>$informasi]);
 	}
 	public function edit($id)
 	{
-		$pengguna = pengguna::find($id);
+		$pengguna=pengguna::find($id);
 		return view('pengguna.edit')->with(array('pengguna'=>$pengguna));
+		
 	}
 	public function lihat($id)
 	{
-		$pengguna = pengguna::find($id);
+		$pengguna=pengguna::find($id);
 		return view('pengguna.lihat')->with(array('pengguna'=>$pengguna));
 	}
 	public function update($id, Request $input)
@@ -44,8 +46,8 @@ class penggunaController extends Controller
 	}
 	public function hapus($id)
 	{
-		$pengguna = pengguna::find($id);
-		$informasi = $pengguna->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
+		$pengguna=pengguna::find($id);
+		$informasi=$pengguna->delete() ? 'Berhasil Delete' : 'Gagal Delete';
 		return redirect('pengguna')->with(['informasi'=>$informasi]);
 	}
 }
